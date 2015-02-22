@@ -1,27 +1,20 @@
 library(dplyr)
 
-# the path to the file containing the names of the features
-filePath <- file.path('UCI HAR Dataset','features.txt')
+# the names of the features are read from the corresponding file...
+features.names <- as.matrix(read.table(file.path('UCI HAR Dataset','features.txt')))
 
-# the names of the features are read as matrix
-features.names <- as.matrix(read.table(filePath))
-
-# the path to the file containing the names of the activities
-filePath <- file.path('UCI HAR Dataset','activity_labels.txt')
-
-# the names of the activities read as factors
-activities.names <- read.table(filePath)
-# activities.names <- read.table(filePath,colClasses=c('numeric','factor'))
+# ...and the same for the names of the activities (read as factors)
+activities.names <- read.table(file.path('UCI HAR Dataset','activity_labels.txt'))
 
 # lists that will contain, respectively, the subject, X and y files for the two datasets
 subject <- vector('list',length=2)
 X <- vector('list',length=2)
 y <- vector('list',length=2)
 
-# the datasets we need to process
+# the available datasets
 datasets <- c('train','test')
 
-# for every dataset we need to process...
+# for every dataset that is to be processed...
 for (iDataSet in seq_along(datasets)) {
 
 	# the path to the "subject_*.txt" file in the corresponding dataset directory
@@ -41,7 +34,7 @@ for (iDataSet in seq_along(datasets)) {
 
 } # for (iDataSet in seq_along(datasets)) {
 
-# the subject information from the two datasets is merged...
+# the subject information from the two datasets is stacked vertically...
 joint.subject <- rbind(subject[[1]],subject[[2]])
 
 # ...and the same for X...

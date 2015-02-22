@@ -2,17 +2,18 @@
 
 Two datasets are availabe, training and test, each in a directory of its own. In each directory, there are three relevant files
 
-* X_<dataset>.txt
-* y_<dataset>.txt
-* subject_<dataset>.txt
+* X_&lt;dataset&gt;.txt
+* y_&lt;dataset&gt;.txt
+* subject_&lt;dataset&gt;.txt
 
-where <dataset> is either training or test, and matches the name of the directory. We take advantage of this structure to read the two datasets in a loop.
+where &lt;dataset&gt; is either training or test, and matches the name of the directory. We take advantage of this structure to read the two datasets in a loop.
 
 In the main folder,
-* "features.txt" provides descriptive names for the variables read in X_<dataset>.txt
+
+* "features.txt" provides descriptive names for the variables read in X_&lt;dataset&gt;.txt
 * "activity_labels.txt" is a table that associates the numeric value (id) of each activity with its corresponding description.
 
-The first is used to properly label the variables in the dataset, whereas the second serves to convert the **numerical** "activity" variable into a more descriptive **factor** variable.
+The first is used to properly label the variables in the dataset, whereas the second serves to convert the *numerical* "activity" variable into a more descriptive *factor* variable.
 
 The raw data can be found [here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
@@ -92,7 +93,7 @@ A list of the variables present in the dataset, along with their type is present
 |  67           | fBodyBodyGyroJerkMag-mean | numeric | explained below                                       |
 |  68           | fBodyBodyGyroJerkMag-std  | numeric | explained below                                       |
 
-An excerpt from the documentation included in the dataset provides a thorough description of the variables. It is reproduced here for completeness.
+An excerpt from the documentation included in the dataset provides a thorough description of the variables. It is reproduced here.
 
 >The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 >
@@ -104,47 +105,84 @@ An excerpt from the documentation included in the dataset provides a thorough de
 >'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 >
 >tBodyAcc-XYZ
+
 >tGravityAcc-XYZ
+
 >tBodyAccJerk-XYZ
+
 >tBodyGyro-XYZ
+
 >tBodyGyroJerk-XYZ
+
 >tBodyAccMag
+
 >tGravityAccMag
+
 >tBodyAccJerkMag
+
 >tBodyGyroMag
+
 >tBodyGyroJerkMag
+
 >fBodyAcc-XYZ
+
 >fBodyAccJerk-XYZ
+
 >fBodyGyro-XYZ
+
 >fBodyAccMag
+
 >fBodyAccJerkMag
+
 >fBodyGyroMag
+
 >fBodyGyroJerkMag
+
 >
 >The set of variables that were estimated from these signals are: 
 >
 >mean(): Mean value
+
 >std(): Standard deviation
+
 >mad(): Median absolute deviation 
+
 >max(): Largest value in array
+
 >min(): Smallest value in array
+
 >sma(): Signal magnitude area
+
 >energy(): Energy measure. Sum of the squares divided by the number of values. 
+
 >iqr(): Interquartile range 
+
 >entropy(): Signal entropy
+
 >arCoeff(): Autorregresion coefficients with Burg order equal to 4
+
 >correlation(): correlation coefficient between two signals
+
 >maxInds(): index of the frequency component with largest magnitude
+
 >meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+
 >skewness(): skewness of the frequency domain signal 
+
 >kurtosis(): kurtosis of the frequency domain signal 
+
 >bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+
 >angle(): Angle between to vectors.
 >
 >Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 >
 >gravityMean
+
 >tBodyAccMean
+
 >tBodyAccJerkMean
+
 >tBodyGyroMean
+
 >tBodyGyroJerkMean
