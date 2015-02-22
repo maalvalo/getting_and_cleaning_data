@@ -10,4 +10,4 @@ The script "run_analysis.R" produces the final tidy dataset "tidy_data.txt". It 
 
 The names of the columns of the above *data.frame* are extracted from "features.txt", and the **numeric** variable "y" is turned into a **factor** variable using the table in "activity_labels.txt".
 
-A new *data.frame* is built extracting the columns whose names contain "mean" or "std", and this new *data.frame* is further filtered by averaging all the variables grouped by "subject" and "activity" to obtain the *tidy" data set.
+A new *data.frame* is built extracting the columns whose names contain "mean" or "std", and this new *data.frame* is further processed by averaging all the variables grouped by "subject" and "activity" to obtain the *tidy" data set.
